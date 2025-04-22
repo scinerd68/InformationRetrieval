@@ -1,6 +1,8 @@
+# https://github.com/castorini/pyserini/blob/master/docs/usage-search.md
+
 from pyserini.search.lucene import LuceneSearcher
 
-searcher = LuceneSearcher.from_prebuilt_index('beir-v1.0.0-scifact.flat')
+searcher = LuceneSearcher.from_prebuilt_index('beir-v1.0.0-scifact.flat', verbose=True)
 searcher.set_bm25(0.82, 0.68)
 hits = searcher.search(r"1,000 genomes project enables mapping of genetic sequence variation consisting of rare variants with larger penetrance effects than common variants.")
 
